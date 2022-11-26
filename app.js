@@ -1,4 +1,6 @@
 const express=require('express');
+const path=require('path');
+
 
 const bodyParser=require('body-parser');
 
@@ -50,6 +52,11 @@ app.use(bodyParser.json({ extended: false }));
 app.use(cors());
 app.use(storeRoutes);
 app.use(cartRoutes);
+
+app.use((req,res)=>{
+  console.log("url",req.url)
+  res.sendFile(path.join(__dirname,`public/${req.url}`));
+})
 
 
 let tempUser;
