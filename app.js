@@ -1,7 +1,6 @@
 const express=require('express');
 const path=require('path');
 
-
 const bodyParser=require('body-parser');
 
 const cors=require('cors');
@@ -23,6 +22,9 @@ const User=require('./models/user');
 const Orders=require('./models/order');
 
 const orderMusic=require('./models/orderMusic')
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 const app=express();
 //RelationShip
